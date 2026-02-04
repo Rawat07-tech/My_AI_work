@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import google.generativeai as genai
 
 # 1. AI Setup (Apni Key aur Model Name check kar lein)
-genai.configure(api_key="AIzaSyDcsmFm8DNTW5B66prWYdTyZAnVPAcYTXE")
+genai.configure(api_key= os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel('gemini-2.5-flash-lite-preview-09-2025') # Ya jo aapka stable chala tha
 
 # 2. Web Scraping Part
@@ -38,4 +38,5 @@ try:
     print(ai_response.text)
     print("="*30)
 except Exception as e:
+
     print(f"AI Error: {e}")
