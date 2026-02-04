@@ -51,7 +51,7 @@ except Exception as e:
 import google.generativeai as genai
 
 # 1. Configuration
-genai.configure(api_key="AIzaSyDcsmFm8DNTW5B66prWYdTyZAnVPAcYTXE")
+genai.configure(api_key= os.getenv("GEMINI_API_KEY"))
 
 # 2. Model (Wahi naam jo aapne list mein dekha)
 # Note: Agar list mein 'models/gemini-1.5-flash' hai, toh pura likhein
@@ -67,4 +67,5 @@ try:
     print("--------------------------")
     
 except Exception as e:
+
     print(f"Abhi bhi issue hai: {e}")
