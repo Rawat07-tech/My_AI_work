@@ -2,7 +2,7 @@ import google.generativeai as genai
 
 # 1. API Key Setup
 # Ise kisi ko mat dikhana!
-MY_KEY = "AIzaSyDcsmFm8DNTW5B66prWYdTyZAnVPAcYTXE" 
+MY_KEY = os.getenv("GEMINI_API_KEY"))
 genai.configure(api_key=MY_KEY)
 
 # 2. Model Selection (2026 ka sabse fast model)
@@ -23,4 +23,5 @@ except Exception as e:
     print("\nAbhi bhi ek masla aa raha hai:")
     # Agar model nahi mila toh ye batayega
     print(f"Details: {e}")
+
     print("\nMashwara: Agar 'Model not found' likha hai, toh 'gemini-1.5-flash' ki jagah 'gemini-pro' likh kar dekhein.")
